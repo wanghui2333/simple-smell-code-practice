@@ -23,6 +23,7 @@
 <!--        <sonar.login>18047edff254b9f2ddb037bc07f62689f2960c77</sonar.login>-->
 
         <sonar.java.pmd.reportPaths>./target/pmd.xml</sonar.java.pmd.reportPaths>
+        <sonar.java.checkstyle.reportPaths>./target/checkstyle-result.xml</sonar.java.checkstyle.reportPaths>
 
         <sonar.organization>meixuesong</sonar.organization>
         <sonar.projectKey>refactoring-java-kata</sonar.projectKey>
@@ -67,6 +68,11 @@
                     <version>3.8.1</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.8.2</version>
+                </plugin>
+                <plugin>
                     <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
                     <version>3.6.0.1398</version>
@@ -75,19 +81,6 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>0.8.6</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-pmd-plugin</artifactId>
-                    <version>3.13.0</version>
-                    <configuration>
-                        <rulesets>
-                            <ruleset>/category/java/bestpractices.xml</ruleset>
-                            <ruleset>/category/java/design.xml</ruleset>
-                            <ruleset>/category/java/codestyle.xml</ruleset>
-                        </rulesets>
-                    </configuration>
-
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -123,4 +116,35 @@
             </build>
         </profile>
     </profiles>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <rulesets>
+                        <ruleset>${project.basedir}/src/main/resources/pmd.xml</ruleset>
+                    </rulesets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.1</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>checkstyle</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+                <configuration>
+                    <configLocation>${project.basedir}/src/main/resources/checkstyle.xml</configLocation>
+                    <suppressionsLocation>${project.basedir}/src/main/resources/checkstyle-suppressions.xml</suppressionsLocation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
