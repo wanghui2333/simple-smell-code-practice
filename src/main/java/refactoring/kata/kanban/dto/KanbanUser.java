@@ -1,9 +1,9 @@
-package refactoring.kata.kanban;
+package refactoring.kata.kanban.dto;
 
 /**
  * @author  <a href="mailto:meixuesong@gmail.com">Mei Xuesong</a>
  */
-public class User {
+public class KanbanUser {
     private String loginCode;
     private String name;
     private String avatar;

@@ -1,4 +1,4 @@
-package refactoring.kata.kanban;
+package refactoring.kata.kanban.dto;
 
 /**
  * @author  <a href="mailto:meixuesong@gmail.com">Mei Xuesong</a>

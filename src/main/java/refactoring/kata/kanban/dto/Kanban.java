@@ -1,4 +1,4 @@
-package refactoring.kata.kanban;
+package refactoring.kata.kanban.dto;
 
 import java.util.List;
 

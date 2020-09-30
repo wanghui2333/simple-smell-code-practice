@@ -1,4 +1,6 @@
-package refactoring.kata.kanban;
+package refactoring.kata.kanban.service;
+
+import refactoring.kata.kanban.dto.QueryBuilder;
 
 import java.util.ArrayList;
 import java.util.List;

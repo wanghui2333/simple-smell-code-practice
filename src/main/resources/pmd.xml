@@ -9,9 +9,13 @@
         My custom rules
     </description>
 
-<!--    <exclude-pattern>.*/some/package/.*</exclude-pattern>-->
+    <exclude-pattern>.*/dto/.*</exclude-pattern>
+    <exclude-pattern>.*/request/.*</exclude-pattern>
+    <exclude-pattern>.*/response/.*</exclude-pattern>
+    <exclude-pattern>.*/dao/.*</exclude-pattern>
 
     <!-- Your rules will come here -->
     <rule ref="category/java/design.xml/DataClass" />
+    <rule ref="category/java/design.xml/GodClass" />
 
 </ruleset>

@@ -1,13 +1,13 @@
-package refactoring.kata;
+package refactoring.kata.kanban;
 
 import org.apache.commons.lang3.StringUtils;
-import refactoring.kata.kanban.ColumnService;
-import refactoring.kata.kanban.Kanban;
-import refactoring.kata.kanban.KanbanColumn;
-import refactoring.kata.kanban.KanbanUser;
-import refactoring.kata.kanban.QueryBuilder;
-import refactoring.kata.kanban.QueryService;
-import refactoring.kata.kanban.TaskInfo;
+import refactoring.kata.kanban.dto.Kanban;
+import refactoring.kata.kanban.dto.KanbanColumn;
+import refactoring.kata.kanban.dto.KanbanUser;
+import refactoring.kata.kanban.dto.QueryBuilder;
+import refactoring.kata.kanban.dto.TaskInfo;
+import refactoring.kata.kanban.service.ColumnService;
+import refactoring.kata.kanban.service.QueryService;
 
 import java.util.ArrayList;
 import java.util.List;

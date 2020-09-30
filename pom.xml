@@ -75,13 +75,14 @@
                 <plugin>
                     <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
-                    <version>3.6.0.1398</version>
+                    <version>3.7.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>0.8.6</version>
                 </plugin>
+
             </plugins>
         </pluginManagement>
     </build>
@@ -127,6 +128,7 @@
                     <rulesets>
                         <ruleset>${project.basedir}/src/main/resources/pmd.xml</ruleset>
                     </rulesets>
+                    <minimumTokens>30</minimumTokens>
                 </configuration>
             </plugin>
             <plugin>
