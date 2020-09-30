@@ -9,8 +9,6 @@ import java.util.List;
  */
 public class EmployeeFinder {
 
-    public static final String ENGINEER = "ENGINEER";
-    public static final String ADMINISTRATOR = "ADMINISTRATOR";
     private List<Employee> employees;
 
     public EmployeeFinder(List<Employee> employees) {
@@ -18,10 +16,9 @@ public class EmployeeFinder {
     }
 
     List<String> findEngineerNames() {
-        String type = ENGINEER;
         List<String> results = new ArrayList<>();
         for (Employee employee : employees) {
-            if (type.equalsIgnoreCase(employee.getType())) {
+            if ("ENGINEER".equalsIgnoreCase(employee.getType())) {
                 results.add(employee.getName());
             }
         }
@@ -30,10 +27,9 @@ public class EmployeeFinder {
     }
 
     List<String> findAdministratorNames() {
-        String type = ADMINISTRATOR;
         List<String> results = new ArrayList<>();
         for (Employee employee : employees) {
-            if (type.equalsIgnoreCase(employee.getType())) {
+            if ("ADMINISTRATOR".equalsIgnoreCase(employee.getType())) {
                 results.add(employee.getName());
             }
         }
