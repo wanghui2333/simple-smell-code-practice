@@ -31,7 +31,7 @@ public class Person {
      */
     public void approve(Order order) {
         if (!managerRole) {
-            throw new RuntimeException("Only manager can approve order.");
+            throw new RuntimeException("Only manager can approve order. "+ order.getId());
         }
 
         //...
@@ -44,7 +44,7 @@ public class Person {
      */
     public void decline(Order order) {
         if (!managerRole) {
-            throw new RuntimeException("Only manager can approve order.");
+            throw new RuntimeException("Only manager can approve order. " + order.getId());
         }
 
         //...
@@ -57,6 +57,7 @@ public class Person {
      * @param order   订单
      */
     public void apply(Person manager, Order order) {
+        //omit implementation
     }
 
     public String getId() {

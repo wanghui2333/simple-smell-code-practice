@@ -1,9 +1,13 @@
 package refactoring.kata.smell.alternative_classes_with_different_interfaces;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @author  <a href="mailto:meixuesong@gmail.com">Mei Xuesong</a>
  */
 public class MyPets {
+    private static Logger logger = LoggerFactory.getLogger(MyPets.class);
     /**
      * TODO:
      * Cat和Dog是类似的类，需要统一接口
@@ -20,7 +24,7 @@ public class MyPets {
         langtou.addDogFriends(bangchui.getName());
 
         if (gulu.isCatFriendWith(bangchui.getName())) {
-            System.out.println("I can't believe it");
+            logger.debug("I can't believe it");
         }
     }
 }

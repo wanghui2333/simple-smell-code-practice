@@ -4,24 +4,24 @@ package refactoring.kata.kanban.dto;
  * @author  <a href="mailto:meixuesong@gmail.com">Mei Xuesong</a>
  */
 public class KanbanUser {
-    private String loginCode;
-    private String name;
+    private String code;
+    private String userName;
     private String avatar;
 
-    public String getLoginCode() {
-        return loginCode;
+    public String getCode() {
+        return code;
     }
 
-    public void setLoginCode(String loginCode) {
-        this.loginCode = loginCode;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getAvatar() {

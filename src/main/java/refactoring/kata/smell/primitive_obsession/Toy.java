@@ -22,4 +22,8 @@ public class Toy {
 
         return length;
     }
+
+    public String getType() {
+        return type;
+    }
 }

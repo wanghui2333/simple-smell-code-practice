@@ -60,8 +60,8 @@ public class KanbanService {
         for (TaskInfo task : taskList) {
             if (task.getAssignToUser() != null) {
                 KanbanUser kanbanUser = new KanbanUser();
-                kanbanUser.setLoginCode(task.getAssignToUser().getLoginCode());
-                kanbanUser.setName(task.getAssignToUser().getName());
+                kanbanUser.setCode(task.getAssignToUser().getLoginCode());
+                kanbanUser.setUserName(task.getAssignToUser().getName());
                 kanbanUser.setAvatar(task.getAssignToUser().getAvatar());
                 users.add(kanbanUser);
             }

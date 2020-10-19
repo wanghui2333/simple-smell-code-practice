@@ -17,21 +17,21 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.release>11</maven.compiler.release>
 
-<!--        for local sonarqube -->
-<!--        <sonar.projectKey>refactoring</sonar.projectKey>-->
-<!--        <sonar.host.url>http://localhost:10200/sonarqube</sonar.host.url>-->
-<!--        <sonar.login>18047edff254b9f2ddb037bc07f62689f2960c77</sonar.login>-->
-
         <sonar.java.pmd.reportPaths>./target/pmd.xml</sonar.java.pmd.reportPaths>
         <sonar.java.checkstyle.reportPaths>./target/checkstyle-result.xml</sonar.java.checkstyle.reportPaths>
+        <sonar.java.spotbugs.reportPaths>./target/spotbugsXml.xml</sonar.java.spotbugs.reportPaths>
 
-        <sonar.organization>meixuesong</sonar.organization>
         <sonar.projectKey>refactoring-java-kata</sonar.projectKey>
         <sonar.organization>meixuesong</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -56,7 +56,6 @@
             <artifactId>mockito-core</artifactId>
             <version>2.19.0</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -75,14 +74,28 @@
                 <plugin>
                     <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
-                    <version>3.7.0</version>
+                    <version>3.7.0.1746</version>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>0.8.6</version>
                 </plugin>
-
+                <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>4.0.4</version>
+                    <configuration>
+                        <plugins>
+                            <plugin>
+                                <groupId>com.github.meixuesong</groupId>
+                                <artifactId>kata-spotbugs-rule</artifactId>
+                                <version>1.0</version>
+                            </plugin>
+                        </plugins>
+                        <includeFilterFile>${project.basedir}/src/main/resources/spotbugs.xml</includeFilterFile>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>

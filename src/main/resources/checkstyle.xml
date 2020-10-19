@@ -207,7 +207,6 @@
         <module name="ParameterAssignment"/>
         <module name="RequireThis"/>
         <module name="SimplifyBooleanExpression"/>
-        <module name="SimplifyBooleanReturn"/>
         <module name="StringLiteralEquality"/>
         <module name="SuperClone"/>
         <module name="SuperFinalize"/>
@@ -221,11 +220,6 @@
 
         <!-- Size Violations -->
         <module name="AnonInnerLength"/>
-        <!-- 方法的长度 -->
-        <module name="ExecutableStatementCount">
-            <property name="max" value="20"/>
-            <property name="tokens" value="METHOD_DEF"/>
-        </module>
         <!-- 构造方法的长度 -->
         <module name="ExecutableStatementCount">
             <property name="max" value="30"/>
@@ -235,7 +229,7 @@
         <module name="MethodCount">
             <property name="maxTotal" value="34"/>
         </module>
-        <!-- 方法长度       To configure the check so that it accepts methods with at most 60 lines, not counting empty lines and single line comments-->
+        <!-- 方法长度 not counting empty lines and single line comments-->
         <module name="MethodLength">
             <property name="tokens" value="METHOD_DEF"/>
             <property name="max" value="20"/>
@@ -245,7 +239,7 @@
         <module name="OuterTypeNumber"/>
         <!-- 方法参数最多数量 -->
         <module name="ParameterNumber">
-            <property name="max" value="4"/>
+            <property name="max" value="5"/>
             <property name="tokens" value="METHOD_DEF"/>
         </module>
         <!--        构造方法参数-->

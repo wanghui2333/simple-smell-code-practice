@@ -33,9 +33,9 @@ public class MeetingRoom {
             return true;
         } else if (isBetween(beginDate, meeting.getBeginDate(), meeting.getEndDate()) || isBetween(endDate, meeting.getBeginDate(), meeting.getEndDate())) {
             return true;
+        } else {
+            return false;
         }
-
-        return false;
     }
 
     private boolean isBetween(Date date, Date beginDate, Date endDate) {
