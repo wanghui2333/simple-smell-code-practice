@@ -6,8 +6,8 @@ package refactoring.kata.kanban.dto;
 public class TaskInfo {
     private User assignToUser;
     private String id;
-    private TaskStateInfo state;
     private String name;
+    private TaskStateInfo state;
     private Long sequence;
 
     public User getAssignToUser() {
@@ -22,6 +22,13 @@ public class TaskInfo {
         return id;
     }
 
+    public Long getSequence() {
+        return sequence;
+    }
+
+    public void setSequence(Long sequence) {
+        this.sequence = sequence;
+    }
 
     public TaskStateInfo getState() {
         return state;
@@ -33,13 +40,5 @@ public class TaskInfo {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getSequence() {
-        return sequence;
-    }
-
-    public void setSequence(Long sequence) {
-        this.sequence = sequence;
     }
 }

@@ -21,6 +21,14 @@ public class User {
     private String telephone;
     private String mobilePhone;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getId() {
         return id;
     }
@@ -29,12 +37,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getProvince() {
+        return province;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProvince(String province) {
+        this.province = province;
     }
 
     public Date getBirthday() {
@@ -45,12 +53,12 @@ public class User {
         this.birthday = birthday;
     }
 
-    public String getProvince() {
-        return province;
+    public String getAddress() {
+        return address;
     }
 
-    public void setProvince(String province) {
-        this.province = province;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getCity() {
@@ -69,12 +77,12 @@ public class User {
         this.street = street;
     }
 
-    public String getAddress() {
-        return address;
+    public String getMobilePhone() {
+        return mobilePhone;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
     }
 
     public String getTelephone() {
@@ -83,14 +91,6 @@ public class User {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
-    }
-
-    public String getMobilePhone() {
-        return mobilePhone;
-    }
-
-    public void setMobilePhone(String mobilePhone) {
-        this.mobilePhone = mobilePhone;
     }
 
     public int getAge() {

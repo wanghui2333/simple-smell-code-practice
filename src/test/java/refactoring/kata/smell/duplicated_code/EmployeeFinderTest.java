@@ -13,15 +13,15 @@ public class EmployeeFinderTest {
     @Test
     public void should_return_names() {
         List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee(EmployeeFinder.ENGINEER, "Jason1"));
-        employees.add(new Employee(EmployeeFinder.ENGINEER, "Jason2"));
-        employees.add(new Employee(EmployeeFinder.ENGINEER, "Jason3"));
-        employees.add(new Employee(EmployeeFinder.ENGINEER, "Jason4"));
-        employees.add(new Employee(EmployeeFinder.ADMINISTRATOR, "Admin1"));
-        employees.add(new Employee(EmployeeFinder.ADMINISTRATOR, "Admin2"));
-        employees.add(new Employee(EmployeeFinder.ADMINISTRATOR, "Admin3"));
-        employees.add(new Employee(EmployeeFinder.ADMINISTRATOR, "Admin4"));
-        employees.add(new Employee(EmployeeFinder.ADMINISTRATOR, "Admin5"));
+        employees.add(new Employee("ENGINEER", "Jason1"));
+        employees.add(new Employee("ENGINEER", "Jason2"));
+        employees.add(new Employee("ENGINEER", "Jason3"));
+        employees.add(new Employee("ENGINEER", "Jason4"));
+        employees.add(new Employee("ADMINISTRATOR", "Admin1"));
+        employees.add(new Employee("ADMINISTRATOR", "Admin2"));
+        employees.add(new Employee("ADMINISTRATOR", "Admin3"));
+        employees.add(new Employee("ADMINISTRATOR", "Admin4"));
+        employees.add(new Employee("ADMINISTRATOR", "Admin5"));
 
         EmployeeFinder finder = new EmployeeFinder(employees);
 
