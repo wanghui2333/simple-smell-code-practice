@@ -5,6 +5,3 @@
 你需要安装Java11本地开发环境，以满足[sonarCloud.io](https://sonarcloud.io)对Java项目要求。
 
 运行`analysis.sh`将自动使用[sonarCloud.io](https://sonarcloud.io)进行静态代码分析。分析结果可以通过 [Refactoring-Java-Kata on sonarcloud.io](https://sonarcloud.io/dashboard?id=refactoring-java-kata)  获取。
-
-
-分析结果
