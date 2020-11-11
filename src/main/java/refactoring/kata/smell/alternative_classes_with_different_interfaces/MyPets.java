@@ -26,5 +26,9 @@ public class MyPets {
         if (gulu.isCatFriendWith(bangchui.getName())) {
             logger.debug("I can't believe it");
         }
+
+        logger.info("info");
+        logger.error("error");
+        logger.debug("debug");
     }
 }
