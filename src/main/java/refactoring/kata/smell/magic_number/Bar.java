@@ -11,9 +11,12 @@ public class Bar {
      * @param status 状态分为有效（1）和无效（0）
      * @return
      */
+    public static final int MIN_AGE_LIMIT = 18;
+
+    public static final int SUITABLE_STATUS = 1;
+
     public boolean doSomething(int age, int status) {
-        //TODO
-        if (age > 18 && status == 1) {
+        if (age > MIN_AGE_LIMIT && status == SUITABLE_STATUS) {
             return true;
         } else {
             return false;

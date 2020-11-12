@@ -1,5 +1,7 @@
 package refactoring.kata.smell.data_class;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -7,19 +9,39 @@ import java.util.Date;
  */
 public class User {
     private String id;
-    //姓名
+    /**
+     * 姓名
+     */
     private String name;
-    //生日
+    /**
+     * 生日
+     */
     private Date birthday;
-    //TODO: 年龄应该是只读的
+    /**
+     * 年龄
+     */
     private int age;
-    //联系地址
+    /**
+     * 联系地址
+     */
     private String province;
     private String city;
     private String street;
     private String address;
     private String telephone;
     private String mobilePhone;
+
+    public void changeAddress(String fullAddress) {
+        String[] list = fullAddress.split(" ");
+        this.setProvince(list[0]);
+        this.setCity(list[1]);
+        this.setStreet(list[2]);
+        this.setAddress(list[3]);
+        this.setTelephone(list[4]);
+        this.setMobilePhone(list[5]);
+    }
+
+
 
     public String getName() {
         return name;
@@ -94,10 +116,12 @@ public class User {
     }
 
     public int getAge() {
+        Date now = new Date();
+        DateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+        int d1 = Integer.parseInt(formatter.format(this.getBirthday()));
+        int d2 = Integer.parseInt(formatter.format(now));
+        int age = (d2 - d1) / 10000;
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
 }

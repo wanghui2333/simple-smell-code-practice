@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author  <a href="mailto:meixuesong@gmail.com">Mei Xuesong</a>
+ * @author <a href="mailto:meixuesong@gmail.com">Mei Xuesong</a>
  */
 public class MeetingRoom {
     private List<Meeting> meetings;
@@ -17,25 +17,28 @@ public class MeetingRoom {
         }
     }
 
-    //TODO: 保持对象完整
     private boolean isRoomAvailable(Date beginDate, Date endDate) {
-        for (Meeting meeting : meetings) {
-            if (isConflict(meeting, beginDate, endDate)) {
-                return false;
-            }
+        if (isConflict(beginDate, endDate)) {
+            return false;
         }
 
         return true;
     }
 
-    private boolean isConflict(Meeting meeting, Date beginDate, Date endDate) {
-        if (isBetween(meeting.getBeginDate(), beginDate, endDate) || isBetween(meeting.getEndDate(), beginDate, endDate)) {
-            return true;
-        } else if (isBetween(beginDate, meeting.getBeginDate(), meeting.getEndDate()) || isBetween(endDate, meeting.getBeginDate(), meeting.getEndDate())) {
-            return true;
-        } else {
-            return false;
+    private boolean isConflict(Date beginDate, Date endDate) {
+
+        for (Meeting meeting : meetings) {
+
+            if (isBetween(meeting.getBeginDate(), beginDate, endDate) || isBetween(meeting.getEndDate(), beginDate, endDate)) {
+                return true;
+            }
+
+            if (isBetween(beginDate, meeting.getBeginDate(), meeting.getEndDate()) || isBetween(endDate, meeting.getBeginDate(), meeting.getEndDate())) {
+                return true;
+            }
         }
+        return false;
+
     }
 
     private boolean isBetween(Date date, Date beginDate, Date endDate) {

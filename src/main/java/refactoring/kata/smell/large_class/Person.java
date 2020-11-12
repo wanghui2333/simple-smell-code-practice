@@ -3,20 +3,24 @@ package refactoring.kata.smell.large_class;
 import java.util.Date;
 
 /**
- * TODO：
- * Person类过大，请将它重构成三个类，Person及其两个子类：Manager, SalesPerson
  * @author  <a href="mailto:meixuesong@gmail.com">Mei Xuesong</a>
  */
-public class Person {
-    //员工ID
+public abstract class Person {
+    /**
+     * 员工ID
+     */
     private String id;
-    //姓名
+    /**
+     * 姓名
+     */
     private String name;
-    //是否管理员
-    private boolean managerRole;
-    //生日
+    /**
+     * 生日
+     */
     private Date birthday;
-    //联系地址
+    /**
+     * 联系地址
+     */
     private String province;
     private String city;
     private String street;
@@ -25,40 +29,25 @@ public class Person {
     private String mobilePhone;
 
     /**
-     * 订单审批同意，只有管理员才可以进行此操作
+     * 订单审批同意
      *
      * @param order
      */
-    public void approve(Order order) {
-        if (!managerRole) {
-            throw new RuntimeException("Only manager can approve order. "+ order.getId());
-        }
-
-        //...
-    }
+    public abstract void approve(Order order);
 
     /**
-     * 订单审批拒绝，只有管理员才可以进行此操作
+     * 订单审批拒绝
      *
      * @param order
      */
-    public void decline(Order order) {
-        if (!managerRole) {
-            throw new RuntimeException("Only manager can approve order. " + order.getId());
-        }
-
-        //...
-    }
+    public abstract void decline(Order order);
 
     /**
      * 发起订单审批申请
      *
-     * @param manager 审批人
      * @param order   订单
      */
-    public void apply(Person manager, Order order) {
-        //omit implementation
-    }
+    public abstract void apply(Order order);
 
     public String getId() {
         return id;
@@ -74,14 +63,6 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public boolean isManagerRole() {
-        return managerRole;
-    }
-
-    public void setManagerRole(boolean managerRole) {
-        this.managerRole = managerRole;
     }
 
     public Date getBirthday() {
